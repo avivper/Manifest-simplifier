@@ -44,8 +44,10 @@ public class App extends Application {
         browse.setOnAction(e -> {
             InputFile inputFile = new InputFile();
             String path = inputFile.getPath();
-            if (path != null) {
+            if (path != null) {  // todo: exclude non-xlsx files
                 input.setText(path);
+            } else {
+                System.out.println("Invalid"); // todo: throw error msg
             }
         });
 
